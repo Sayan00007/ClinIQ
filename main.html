@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedAI Diagnostic Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>MedAI</h1>
+                <p>AI-Powered Diagnostic Platform</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label class="form-label">Clinic ID</label>
+                    <input type="text" class="form-control" id="clinic-id" value="DEMO_CLINIC_001" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" value="dr.smith" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" value="demo123" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
+            </form>
+            <div class="login-footer">
+                <p>Demo Credentials: dr.smith / demo123</p>
+                <div class="compliance-badges">
+                    <span class="status status--success">HIPAA Compliant</span>
+                    <span class="status status--info">SOC 2 Certified</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="main-app" class="main-app hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h2 class="app-logo">MedAI</h2>
+                <nav class="main-nav">
+                    <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-view="patients">Patients</button>
+                    <button class="nav-btn" data-view="diagnostics">Diagnostics</button>
+                    <button class="nav-btn" data-view="reports">Reports</button>
+                    <button class="nav-btn" data-view="analytics">Analytics</button>
+                    <button class="nav-btn" data-view="settings">Settings</button>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="system-status">
+                    <span class="status status--success">System Online</span>
+                </div>
+                <div class="user-menu">
+                    <span>Dr. Smith</span>
+                    <button class="btn btn--outline btn--sm" id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard View -->
+        <main id="dashboard-view" class="view-container">
+            <div class="container">
+                <div class="view-header">
+                    <h1>Dashboard</h1>
+                    <p>Today's Overview - Friday, September 19, 2025</p>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">🔬</div>
+                        <div class="metric-content">
+                            <div class="metric-value">23</div>
+                            <div class="metric-label">Diagnostics Today</div>
+                            <div class="metric-change">+12% from yesterday</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-content">
+                            <div class="metric-value">1.3s</div>
+                            <div class="metric-label">Avg Processing Time</div>
+                            <div class="metric-change">-0.2s improvement</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-content">
+                            <div class="metric-value">94.2%</div>
+                            <div class="metric-label">AI Accuracy</div>
+                            <div class="metric-change">+0.5% this week</div>
+                        </div>
+                    </div>
+                    <div class="metric-card urgent">
+                        <div class="metric-icon">🚨</div>
+                        <div class="metric-content">
+                            <div class="metric-value">2</div>
+                            <div class="metric-label">Critical Alerts</div>
+                            <div class="metric-change">Requires attention</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <!-- Pending Cases -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h3>Pending Cases</h3>
+                            <button class="btn btn--primary btn--sm">New Diagnostic</button>
+                        </div>
+                        <div class="pending-cases">
+                            <div class="case-item priority-high">
+                                <div class="case-info">
+                                    <h4>Sarah Johnson (P001)</h4>
+                                    <p>Chest X-Ray Analysis • Submitted 15 min ago</p>
+                                    <span class="status status--warning">In Progress</span>
+                                </div>
+                                <div class="case-actions">
+                                    <button class="btn btn--outline btn--sm">View Details</button>
+                                </div>
+                            </div>
+                            <div class="case-item">
+                                <div class="case-info">
+                                    <h4>Michael Chen (P002)</h4>
+                                    <p>MRI Brain Scan • AI Analysis Complete</p>
+                                    <span class="status status--success">Ready for Review</span>
+                                </div>
+                                <div class="case-actions">
+                                    <button class="btn btn--primary btn--sm">Review Results</button>
+                                </div>
+                            </div>
+                            <div class="case-item">
+                                <div class="case-info">
+                                    <h4>Emily Rodriguez (P003)</h4>
+                                    <p>Symptom Assessment • Awaiting Images</p>
+                                    <span class="status status--info">Waiting for Upload</span>
+                                </div>
+                                <div class="case-actions">
+                                    <button class="btn btn--outline btn--sm">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h3>System Integration Status</h3>
+                        </div>
+                        <div class="integration-status">
+                            <div class="integration-item">
+                                <div class="integration-info">
+                                    <h4>Epic EMR</h4>
+                                    <p>Last sync: 2025-09-19 21:45</p>
+                                </div>
+                                <span class="status status--success">Connected</span>
+                            </div>
+                            <div class="integration-item">
+                                <div class="integration-info">
+                                    <h4>Cerner</h4>
+                                    <p>Last sync: 2025-09-19 21:40</p>
+                                </div>
+                                <span class="status status--success">Connected</span>
+                            </div>
+                            <div class="integration-item">
+                                <div class="integration-info">
+                                    <h4>Lab Corp API</h4>
+                                    <p>Last sync: 2025-09-19 21:30</p>
+                                </div>
+                                <span class="status status--success">Connected</span>
+                            </div>
+                            <div class="integration-item">
+                                <div class="integration-info">
+                                    <h4>FHIR Server</h4>
+                                    <p>Last sync: 2025-09-19 21:50</p>
+                                </div>
+                                <span class="status status--success">Connected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Patients View -->
+        <main id="patients-view" class="view-container hidden">
+            <div class="container">
+                <div class="view-header">
+                    <h1>Patient Management</h1>
+                    <div class="view-actions">
+                        <div class="search-container">
+                            <input type="text" class="form-control" placeholder="Search patients..." id="patient-search">
+                        </div>
+                        <button class="btn btn--primary" id="add-patient-btn">Add New Patient</button>
+                    </div>
+                </div>
+
+                <div class="patients-grid">
+                    <div class="patient-card" data-patient-id="P001">
+                        <div class="patient-header">
+                            <h3>Sarah Johnson</h3>
+                            <span class="status status--warning">Medium Risk</span>
+                        </div>
+                        <div class="patient-info">
+                            <p><strong>Age:</strong> 34 • <strong>Gender:</strong> Female</p>
+                            <p><strong>Last Visit:</strong> 2025-09-15</p>
+                            <p><strong>Conditions:</strong> Hypertension, Diabetes Type 2</p>
+                        </div>
+                        <div class="patient-actions">
+                            <button class="btn btn--outline btn--sm">View Profile</button>
+                            <button class="btn btn--primary btn--sm">New Diagnostic</button>
+                        </div>
+                    </div>
+
+                    <div class="patient-card" data-patient-id="P002">
+                        <div class="patient-header">
+                            <h3>Michael Chen</h3>
+                            <span class="status status--error">High Risk</span>
+                        </div>
+                        <div class="patient-info">
+                            <p><strong>Age:</strong> 67 • <strong>Gender:</strong> Male</p>
+                            <p><strong>Last Visit:</strong> 2025-09-18</p>
+                            <p><strong>Conditions:</strong> COPD, Atrial Fibrillation</p>
+                        </div>
+                        <div class="patient-actions">
+                            <button class="btn btn--outline btn--sm">View Profile</button>
+                            <button class="btn btn--primary btn--sm">New Diagnostic</button>
+                        </div>
+                    </div>
+
+                    <div class="patient-card" data-patient-id="P003">
+                        <div class="patient-header">
+                            <h3>Emily Rodriguez</h3>
+                            <span class="status status--success">Low Risk</span>
+                        </div>
+                        <div class="patient-info">
+                            <p><strong>Age:</strong> 28 • <strong>Gender:</strong> Female</p>
+                            <p><strong>Last Visit:</strong> 2025-09-19</p>
+                            <p><strong>Conditions:</strong> Asthma</p>
+                        </div>
+                        <div class="patient-actions">
+                            <button class="btn btn--outline btn--sm">View Profile</button>
+                            <button class="btn btn--primary btn--sm">New Diagnostic</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Diagnostics View -->
+        <main id="diagnostics-view" class="view-container hidden">
+            <div class="container">
+                <div class="diagnostic-workflow">
+                    <!-- Step 1: Patient Selection -->
+                    <div class="workflow-step active" id="patient-selection">
+                        <div class="step-header">
+                            <h2>Step 1: Select Patient</h2>
+                            <div class="step-progress">1 of 4</div>
+                        </div>
+                        <div class="patient-selector">
+                            <select class="form-control" id="diagnostic-patient-select">
+                                <option value="">Select a patient...</option>
+                                <option value="P001">Sarah Johnson (P001)</option>
+                                <option value="P002">Michael Chen (P002)</option>
+                                <option value="P003">Emily Rodriguez (P003)</option>
+                            </select>
+                            <button class="btn btn--primary" id="continue-to-symptoms">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Symptom Assessment -->
+                    <div class="workflow-step hidden" id="symptom-assessment">
+                        <div class="step-header">
+                            <h2>Step 2: Symptom Assessment</h2>
+                            <div class="step-progress">2 of 4</div>
+                        </div>
+                        <div class="symptom-form">
+                            <div class="form-group">
+                                <label class="form-label">Chief Complaint</label>
+                                <textarea class="form-control" rows="3" placeholder="Describe the primary reason for this visit..."></textarea>
+                            </div>
+                            
+                            <div class="symptoms-grid">
+                                <div class="symptom-category">
+                                    <h4>Respiratory</h4>
+                                    <div class="symptom-options">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="shortness-of-breath"> Shortness of Breath
+                                            <select class="severity-select">
+                                                <option value="1">Mild</option>
+                                                <option value="5">Moderate</option>
+                                                <option value="10">Severe</option>
+                                            </select>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="cough"> Cough
+                                            <select class="severity-select">
+                                                <option value="1">Mild</option>
+                                                <option value="5">Moderate</option>
+                                                <option value="10">Severe</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="symptom-category">
+                                    <h4>Cardiac</h4>
+                                    <div class="symptom-options">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="chest-pain"> Chest Pain
+                                            <select class="severity-select">
+                                                <option value="1">Mild</option>
+                                                <option value="5">Moderate</option>
+                                                <option value="10">Severe</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="symptom-category">
+                                    <h4>Neurological</h4>
+                                    <div class="symptom-options">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="headache"> Headache
+                                            <select class="severity-select">
+                                                <option value="1">Mild</option>
+                                                <option value="5">Moderate</option>
+                                                <option value="10">Severe</option>
+                                            </select>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="dizziness"> Dizziness
+                                            <select class="severity-select">
+                                                <option value="1">Mild</option>
+                                                <option value="5">Moderate</option>
+                                                <option value="10">Severe</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vital-signs">
+                                <h4>Vital Signs</h4>
+                                <div class="vitals-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Blood Pressure</label>
+                                        <input type="text" class="form-control" placeholder="120/80">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Heart Rate (bpm)</label>
+                                        <input type="number" class="form-control" placeholder="72">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Temperature (°F)</label>
+                                        <input type="number" class="form-control" placeholder="98.6">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Oxygen Saturation (%)</label>
+                                        <input type="number" class="form-control" placeholder="98">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-actions">
+                                <button class="btn btn--outline" id="back-to-patient">Back</button>
+                                <button class="btn btn--primary" id="continue-to-images">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Medical Images -->
+                    <div class="workflow-step hidden" id="image-upload">
+                        <div class="step-header">
+                            <h2>Step 3: Medical Images</h2>
+                            <div class="step-progress">3 of 4</div>
+                        </div>
+                        <div class="image-upload-section">
+                            <div class="upload-area" id="image-drop-zone">
+                                <div class="upload-icon">📁</div>
+                                <h4>Upload Medical Images</h4>
+                                <p>Drag and drop X-rays, MRI, CT scans, or click to browse</p>
+                                <input type="file" id="image-input" accept="image/*" multiple hidden>
+                                <button class="btn btn--outline" id="browse-files">Browse Files</button>
+                            </div>
+                            <div class="uploaded-images" id="uploaded-images"></div>
+                            <div class="step-actions">
+                                <button class="btn btn--outline" id="back-to-symptoms">Back</button>
+                                <button class="btn btn--primary" id="analyze-case">Analyze Case</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: AI Analysis Results -->
+                    <div class="workflow-step hidden" id="analysis-results">
+                        <div class="step-header">
+                            <h2>Step 4: AI Analysis Results</h2>
+                            <div class="step-progress">4 of 4</div>
+                        </div>
+                        <div class="analysis-content">
+                            <div class="analysis-loading hidden" id="analysis-loading">
+                                <div class="loading-spinner"></div>
+                                <h3>AI Analysis in Progress...</h3>
+                                <p>Processing symptoms, vital signs, and medical images</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-complete hidden" id="analysis-complete">
+                                <div class="ai-confidence">
+                                    <h3>AI Analysis Complete</h3>
+                                    <div class="confidence-score">
+                                        <span class="confidence-value">92%</span>
+                                        <span class="confidence-label">Confidence Score</span>
+                                    </div>
+                                </div>
+
+                                <div class="diagnostic-results">
+                                    <div class="primary-diagnosis">
+                                        <h4>Primary Diagnosis</h4>
+                                        <div class="diagnosis-card">
+                                            <h5>Pneumonia</h5>
+                                            <p><strong>ICD-10:</strong> J12.9</p>
+                                            <p><strong>Confidence:</strong> 92%</p>
+                                            <p><strong>Treatment:</strong> Antibiotic therapy, rest, hydration</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="differential-diagnosis">
+                                        <h4>Differential Diagnosis</h4>
+                                        <div class="diagnosis-list">
+                                            <div class="diagnosis-item">
+                                                <span class="diagnosis-name">Bronchitis</span>
+                                                <span class="diagnosis-confidence">78%</span>
+                                            </div>
+                                            <div class="diagnosis-item">
+                                                <span class="diagnosis-name">Upper Respiratory Infection</span>
+                                                <span class="diagnosis-confidence">65%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="recommendations">
+                                        <h4>Recommendations</h4>
+                                        <ul>
+                                            <li>Start antibiotic therapy immediately</li>
+                                            <li>Monitor oxygen saturation closely</li>
+                                            <li>Follow-up in 48-72 hours</li>
+                                            <li>Consider chest X-ray in 1 week if symptoms persist</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="step-actions">
+                                    <button class="btn btn--outline" id="back-to-images">Back</button>
+                                    <button class="btn btn--primary" id="generate-report">Generate Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Reports View -->
+        <main id="reports-view" class="view-container hidden">
+            <div class="container">
+                <div class="view-header">
+                    <h1>Diagnostic Reports</h1>
+                    <div class="view-actions">
+                        <select class="form-control">
+                            <option>All Reports</option>
+                            <option>Today</option>
+                            <option>This Week</option>
+                            <option>This Month</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="reports-list">
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h4>Sarah Johnson - Chest X-Ray Analysis</h4>
+                            <p>Generated: 2025-09-19 14:30 • Confidence: 94.2%</p>
+                            <span class="status status--success">Complete</span>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn--outline btn--sm">View Report</button>
+                            <button class="btn btn--primary btn--sm">Export PDF</button>
+                        </div>
+                    </div>
+
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h4>Michael Chen - Brain MRI Analysis</h4>
+                            <p>Generated: 2025-09-18 16:15 • Confidence: 97.8%</p>
+                            <span class="status status--success">Complete</span>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn--outline btn--sm">View Report</button>
+                            <button class="btn btn--primary btn--sm">Export PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Analytics View -->
+        <main id="analytics-view" class="view-container hidden">
+            <div class="container">
+                <div class="view-header">
+                    <h1>Analytics & Insights</h1>
+                </div>
+
+                <div class="analytics-dashboard">
+                    <div class="analytics-metrics">
+                        <div class="metric-card">
+                            <h4>AI Model Performance</h4>
+                            <div class="metric-value">94.2%</div>
+                            <div class="metric-label">Overall Accuracy</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Diagnostics This Month</h4>
+                            <div class="metric-value">847</div>
+                            <div class="metric-label">+23% vs last month</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Cost Savings</h4>
+                            <div class="metric-value">$45,000</div>
+                            <div class="metric-label">Annual projected</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Time Savings</h4>
+                            <div class="metric-value">70%</div>
+                            <div class="metric-label">Avg per diagnostic</div>
+                        </div>
+                    </div>
+
+                    <div class="compliance-section">
+                        <h3>Compliance Metrics</h3>
+                        <div class="compliance-grid">
+                            <div class="compliance-item">
+                                <span class="compliance-label">HIPAA Compliance</span>
+                                <span class="compliance-value">100%</span>
+                            </div>
+                            <div class="compliance-item">
+                                <span class="compliance-label">Audit Score</span>
+                                <span class="compliance-value">98%</span>
+                            </div>
+                            <div class="compliance-item">
+                                <span class="compliance-label">Data Encryption</span>
+                                <span class="compliance-value">100%</span>
+                            </div>
+                            <div class="compliance-item">
+                                <span class="compliance-label">Access Controls</span>
+                                <span class="compliance-value">97%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Settings View -->
+        <main id="settings-view" class="view-container hidden">
+            <div class="container">
+                <div class="view-header">
+                    <h1>Settings & Configuration</h1>
+                </div>
+
+                <div class="settings-sections">
+                    <div class="settings-section">
+                        <h3>AI Model Configuration</h3>
+                        <div class="form-group">
+                            <label class="form-label">Confidence Threshold</label>
+                            <input type="range" class="form-control" value="85" min="50" max="100">
+                            <span>85%</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Auto-generate Reports</label>
+                            <input type="checkbox" checked> Enable automatic report generation
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Integration Settings</h3>
+                        <div class="integration-settings">
+                            <div class="integration-toggle">
+                                <span>Epic EMR Integration</span>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="integration-toggle">
+                                <span>Cerner Integration</span>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="integration-toggle">
+                                <span>FHIR API</span>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Audit & Compliance</h3>
+                        <div class="audit-controls">
+                            <button class="btn btn--outline">View Audit Log</button>
+                            <button class="btn btn--outline">Export Compliance Report</button>
+                            <button class="btn btn--outline">Security Assessment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal hidden" id="app-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Modal Title</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

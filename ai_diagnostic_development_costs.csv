@@ -1,0 +1,7 @@
+Platform_Type,Development_Cost_Min_USD,Development_Cost_Max_USD,Development_Time_Months,Key_Features
+Basic AI Chatbot/Symptom Checker,30000,80000,2-4,"Basic symptom assessment, rule-based AI"
+Mid-level Diagnostic Platform,100000,300000,4-8,"Image recognition, EHR integration, decision support"
+Advanced AI Diagnostic System,200000,500000,8-16,"Deep learning, NLP, predictive diagnostics"
+Enterprise Medical AI Platform,500000,1000000,12-24,"Full clinical workflow, multi-modal AI, regulatory compliance"
+AI Medical Imaging System,150000,500000,6-12,"Medical image analysis, radiology AI, pattern recognition"
+Full DaaS Platform,300000,1000000,12-18,"End-to-end diagnostic service, lab integration, reporting"

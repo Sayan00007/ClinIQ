@@ -1,0 +1,9 @@
+Component,AWS_Solution,Azure_Solution,Open_Source_Alternative
+Cloud Infrastructure,"EC2, Lambda, ECS, S3","Virtual Machines, Functions, Container Instances","Docker, Kubernetes, MinIO"
+AI/ML Framework,"SageMaker, Bedrock, Comprehend Medical","Machine Learning Studio, Cognitive Services","TensorFlow, PyTorch, Hugging Face"
+Database,"RDS, DynamoDB, HealthLake","SQL Database, Cosmos DB, Healthcare APIs","PostgreSQL, MongoDB, FHIR Server"
+API Framework,"API Gateway, AppSync","API Management, Functions","FastAPI, Django REST"
+Frontend,"Amplify, CloudFront","Static Web Apps, CDN","React, Vue.js, Angular"
+Security & Compliance,"IAM, KMS, HIPAA compliance","Active Directory, Key Vault, HIPAA","OAuth2, JWT, Vault"
+Integration APIs,"HealthLake, FHIR APIs","Healthcare APIs, FHIR","HAPI FHIR, OpenEMR APIs"
+Monitoring,"CloudWatch, X-Ray","Monitor, Application Insights","Prometheus, Grafana"

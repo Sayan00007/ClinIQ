@@ -1,0 +1,7 @@
+Model,Price_Range_USD,Target_Customer,Pros
+Per-Test Fee,5-50 per test,"Small clinics, individual practitioners","Low barrier to entry, scalable"
+Subscription (Monthly),500-5000 per month,"Medium practices, specialty clinics","Predictable revenue, good for small practices"
+Subscription (Annual),5000-50000 per year,"Large practices, small hospitals","Higher revenue, customer commitment"
+Pay-per-Use,0.10-2.00 per analysis,"Research institutions, startups","Flexible, usage-based pricing"
+Tiered Pricing,1000-25000 per tier,Multi-location practices,Accommodates different needs
+Enterprise License,100000-1000000 per year,"Hospital systems, health networks","High revenue, long-term contracts"
