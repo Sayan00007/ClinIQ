@@ -1,7 +1,7 @@
-// MedAI Platform JavaScript - Fixed Version
+// ClinIQ Platform JavaScript - Fixed Version
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('MedAI Platform Loading...');
+    console.log('ClinIQ Platform Loading...');
     
     // Initialize all functionality
     initNavigation();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCTAButtons();
     initSmoothScrolling();
     
-    console.log('MedAI Platform Loaded Successfully');
+    console.log('ClinIQ Platform Loaded Successfully');
 });
 
 // Navigation functionality
@@ -54,10 +54,10 @@ function initFeatureCards() {
     
     const featureDetails = {
         'image-analysis': {
-            title: 'AI Medical Image Analysis',
+            title: 'Medical Image Analysis',
             content: `
                 <div class="feature-detail">
-                    <h4>Advanced AI Image Processing</h4>
+                    <h4>Advanced Image Processing</h4>
                     <p>Our state-of-the-art computer vision algorithms can analyze various medical imaging modalities with unprecedented accuracy:</p>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
@@ -94,7 +94,7 @@ function initFeatureCards() {
                                 <span style="font-size: 1.5em;">⚡</span>
                                 <div>
                                     <strong>Instant Results</strong>
-                                    <p style="margin: 0; color: var(--color-text-secondary);">Get AI analysis results in under 30 seconds</p>
+                                    <p style="margin: 0; color: var(--color-text-secondary);">Get analysis results in under 30 seconds</p>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
@@ -208,8 +208,8 @@ function initFeatureCards() {
                             <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--color-bg-3); border-radius: 8px;">
                                 <span style="background: var(--color-primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</span>
                                 <div>
-                                    <strong>AI Analysis</strong>
-                                    <p style="margin: 0; color: var(--color-text-secondary);">Process data through appropriate AI models</p>
+                                    <strong>Analysis</strong>
+                                    <p style="margin: 0; color: var(--color-text-secondary);">Process data through appropriate models</p>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--color-bg-5); border-radius: 8px;">
@@ -246,7 +246,7 @@ function initFeatureCards() {
                             <h5>✅ FDA Clearance</h5>
                             <ul>
                                 <li>Class II medical device status</li>
-                                <li>510(k) clearance for AI algorithms</li>
+                                <li>510(k) clearance for algorithms</li>
                                 <li>Clinical validation studies</li>
                                 <li>Post-market surveillance</li>
                             </ul>
@@ -514,7 +514,7 @@ function showReportPreview() {
     modalBody.innerHTML = `
         <div class="report-preview">
             <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 16px; margin-bottom: 16px;">
-                <h4>AI Diagnostic Report</h4>
+                <h4>Diagnostic Report</h4>
                 <p style="color: var(--color-text-secondary); margin: 0;">Generated on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}</p>
             </div>
             
@@ -529,9 +529,9 @@ function showReportPreview() {
             </div>
             
             <div style="margin-bottom: 20px;">
-                <h5>AI Analysis Results</h5>
+                <h5>Analysis Results</h5>
                 <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <span>AI Confidence Score:</span>
+                    <span>Confidence Score:</span>
                     <span class="status status--success">94.2%</span>
                 </div>
                 
@@ -568,7 +568,7 @@ function showReportPreview() {
             </div>
             
             <div style="border-top: 1px solid var(--color-border); padding-top: 16px;">
-                <p style="font-style: italic; color: var(--color-text-secondary); font-size: 0.9em; margin-bottom: 16px;">This report was generated using AI-powered diagnostic tools. Please review in conjunction with clinical findings and patient history.</p>
+                <p style="font-style: italic; color: var(--color-text-secondary); font-size: 0.9em; margin-bottom: 16px;">This report was generated using diagnostic tools. Please review in conjunction with clinical findings and patient history.</p>
                 <div style="display: flex; gap: 12px;">
                     <button class="btn btn--primary">Download PDF</button>
                     <button class="btn btn--outline">Send to EMR</button>
@@ -620,8 +620,7 @@ function initCTAButtons() {
         const buttonText = button.textContent.trim();
         if (buttonText.includes('Schedule Demo') || 
             buttonText.includes('Contact Sales') ||
-            buttonText.includes('Start Free Trial') ||
-            buttonText.includes('Watch Demo')) {
+            buttonText.includes('Start Free Trial')) {
             
             button.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -645,7 +644,7 @@ function showContactModal() {
     modalTitle.textContent = 'Schedule a Demo';
     modalBody.innerHTML = `
         <div class="contact-form">
-            <p>Ready to see MedAI in action? Schedule a personalized demo with our team.</p>
+            <p>Ready to see ClinIQ in action? Schedule a personalized demo with our team.</p>
             
             <form class="demo-form">
                 <div class="form-group">
@@ -696,8 +695,8 @@ function showContactModal() {
             
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--color-border);">
                 <p><strong>Or contact us directly:</strong></p>
-                <p>📧 sales@medai-platform.com</p>
-                <p>📞 1-800-MEDAI-AI</p>
+                <p>📧 sales@ClinIQ-platform.com</p>
+                <p>📞 1-800-0000</p>
             </div>
         </div>
     `;
@@ -717,7 +716,7 @@ function showContactModal() {
                 <div style="text-align: center; padding: 20px;">
                     <div style="font-size: 3em; margin-bottom: 16px;">✅</div>
                     <h4>Demo Scheduled!</h4>
-                    <p>Thank you for your interest in MedAI. Our team will contact you within 24 hours to schedule your personalized demo.</p>
+                    <p>Thank you for your interest in ClinIQ. Our team will contact you within 24 hours to schedule your personalized demo.</p>
                     <p>In the meantime, feel free to explore our platform features and pricing calculator.</p>
                     <button class="btn btn--primary" onclick="document.getElementById('feature-modal').classList.add('hidden')">Close</button>
                 </div>

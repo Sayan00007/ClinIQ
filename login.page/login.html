@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinIQ - Login | Diagnostics</title>
+    <link rel="stylesheet" href="auth-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Background Pattern -->
+        <div class="auth-bg">
+            <div class="bg-pattern"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="auth-content">
+            <!-- Left Side - Branding -->
+            <div class="auth-brand">
+                <div class="brand-content">
+                    <div class="brand-logo">
+                        <div class="logo-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4Z" fill="#2563EB"/>
+                                <path d="M16 24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24C32 28.4183 28.4183 32 24 32C19.5817 32 16 28.4183 16 24Z" fill="white"/>
+                                <path d="M20 24C20 21.7909 21.7909 20 24 20C26.2091 20 28 21.7909 28 24C28 26.2091 26.2091 28 24 28C21.7909 28 20 26.2091 20 24Z" fill="#2563EB"/>
+                            </svg>
+                        </div>
+                        <h1>ClinIQ</h1>
+                    </div>
+                    <h2>Diagnostics for Modern Healthcare</h2>
+                    <p>Transform your practice with intelligent diagnostic tools. Join thousands of healthcare providers already using ClinIQ.</p>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <span>95%+ Diagnostic Accuracy</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <span>Real-time Processing</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔒</div>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔗</div>
+                            <span>EMR Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Login Form -->
+            <div class="auth-form-container">
+                <div class="auth-form-wrapper">
+                    <div class="form-header">
+                        <h3>Welcome Back</h3>
+                        <p>Sign in to your ClinIQ account to continue</p>
+                    </div>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="clinic-id" class="form-label">Clinic ID</label>
+                            <input 
+                                type="text" 
+                                id="clinic-id" 
+                                name="clinicId" 
+                                class="form-control" 
+                                placeholder="Enter your clinic ID"
+                                value="DEMO_CLINIC_001"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input 
+                                type="text" 
+                                id="username" 
+                                name="username" 
+                                class="form-control" 
+                                placeholder="Enter your username"
+                                value="dr.smith"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    class="form-control" 
+                                    placeholder="Enter your password"
+                                    value="demo123"
+                                    required
+                                >
+                                <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember" id="remember">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Sign In</span>
+                            <div class="btn-loader hidden">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+
+                        <div class="form-divider">
+                            <span>or</span>
+                        </div>
+
+                        <button type="button" class="btn btn-secondary btn-full" onclick="demoLogin()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                            Try Demo Account
+                        </button>
+                    </form>
+
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="signup.html" class="auth-link">Sign up here</a></p>
+                    </div>
+
+                    <div class="compliance-badges">
+                        <div class="badge">
+                            <span class="badge-icon">🛡️</span>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">✅</span>
+                            <span>SOC 2 Certified</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">🔐</span>
+                            <span>256-bit Encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth-script.js"></script>
+</body>
+</html>

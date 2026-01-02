@@ -1,8 +1,8 @@
-// MedAI Diagnostic Platform JavaScript - Robust Version
+// ClinIQ Diagnostic Platform JavaScript - Robust Version
 (function() {
     'use strict';
     
-    console.log('MedAI Platform Starting...');
+    console.log('ClinIQ Platform Starting...');
     
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
@@ -59,7 +59,7 @@
         };
 
         // Initialize login functionality FIRST
-        initLogin();
+        //initLogin();
         
         // Initialize other components
         initNavigation();
@@ -70,105 +70,7 @@
         initReports();
         initSettings();
         
-        console.log('MedAI Platform Loaded Successfully');
-
-        // === LOGIN FUNCTIONALITY ===
-        function initLogin() {
-            console.log('Initializing login...');
-            
-            const loginForm = document.getElementById('login-form');
-            const loginScreen = document.getElementById('login-screen');
-            const mainApp = document.getElementById('main-app');
-            const logoutBtn = document.getElementById('logout-btn');
-
-            if (!loginForm) {
-                console.error('Login form not found');
-                return;
-            }
-
-            // Handle form submission
-            loginForm.addEventListener('submit', handleLogin);
-            
-            // Handle logout
-            if (logoutBtn) {
-                logoutBtn.addEventListener('click', handleLogout);
-            }
-
-            function handleLogin(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                console.log('Login form submitted');
-                
-                const clinicId = document.getElementById('clinic-id');
-                const username = document.getElementById('username');
-                const password = document.getElementById('password');
-
-                if (!clinicId || !username || !password) {
-                    console.error('Login fields not found');
-                    return;
-                }
-
-                const clinicIdValue = clinicId.value.trim();
-                const usernameValue = username.value.trim();
-                const passwordValue = password.value.trim();
-
-                console.log('Login values:', {
-                    clinic: clinicIdValue,
-                    user: usernameValue,
-                    pass: passwordValue ? '***' : 'empty'
-                });
-
-                // Simple validation - just check if fields have content
-                if (usernameValue.length > 0 && passwordValue.length > 0) {
-                    console.log('Login validation passed');
-                    
-                    currentUser = {
-                        clinicId: clinicIdValue,
-                        username: usernameValue,
-                        name: 'Dr. Smith'
-                    };
-
-                    // Hide login screen
-                    if (loginScreen) {
-                        loginScreen.classList.add('hidden');
-                        console.log('Login screen hidden');
-                    }
-                    
-                    // Show main app
-                    if (mainApp) {
-                        mainApp.classList.remove('hidden');
-                        console.log('Main app shown');
-                    }
-                    
-                    // Switch to dashboard
-                    switchView('dashboard');
-                    showNotification('Login successful! Welcome to MedAI', 'success');
-                    
-                } else {
-                    console.log('Login validation failed');
-                    showNotification('Please enter username and password', 'error');
-                }
-            }
-
-            function handleLogout(e) {
-                e.preventDefault();
-                
-                currentUser = null;
-                diagnosticSession = {
-                    patient: null,
-                    symptoms: [],
-                    vitals: {},
-                    images: [],
-                    results: null
-                };
-                
-                if (mainApp) mainApp.classList.add('hidden');
-                if (loginScreen) loginScreen.classList.remove('hidden');
-                
-                showNotification('Logged out successfully', 'success');
-            }
-        }
+        console.log('ClinIQ Platform Loaded Successfully');
 
         // === NAVIGATION ===
         function initNavigation() {
@@ -250,9 +152,9 @@
                         </div>
                         
                         <div class="ai-analysis">
-                            <h4>AI Analysis Results</h4>
+                            <h4>Analysis Results</h4>
                             <div style="display: flex; justify-content: space-between; align-items: center; margin: 16px 0;">
-                                <span>AI Confidence Score:</span>
+                                <span>Confidence Score:</span>
                                 <span style="font-size: 24px; font-weight: bold; color: var(--color-success);">97.8%</span>
                             </div>
                             
@@ -608,7 +510,7 @@
                     treatment: "Antibiotic therapy, rest, hydration"
                 };
                 
-                console.log('AI analysis complete');
+                console.log('analysis complete');
             }, 3500);
         }
 
@@ -678,7 +580,7 @@
             modalBody.innerHTML = `
                 <div class="full-report">
                     <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 16px; margin-bottom: 20px;">
-                        <h4>MedAI Diagnostic Report</h4>
+                        <h4>ClinIQ Diagnostic Report</h4>
                         <p style="color: var(--color-text-secondary);">Generated: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}</p>
                     </div>
                     
@@ -692,10 +594,10 @@
                     </div>
                     
                     <div style="margin-bottom: 24px;">
-                        <h5>AI Analysis Results</h5>
+                        <h5>Analysis Results</h5>
                         <div style="background: var(--color-bg-5); padding: 16px; border-radius: 8px;">
                             <p><strong>Primary Diagnosis:</strong> Pneumonia (J12.9)</p>
-                            <p><strong>AI Confidence:</strong> 94.2%</p>
+                            <p><strong>Confidence:</strong> 94.2%</p>
                             <p><strong>Risk Level:</strong> Moderate</p>
                         </div>
                     </div>

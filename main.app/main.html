@@ -3,48 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedAI Diagnostic Platform</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ClinIQ Diagnostic Platform</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- Login Screen -->
-    <div id="login-screen" class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <h1>MedAI</h1>
-                <p>AI-Powered Diagnostic Platform</p>
-            </div>
-            <form id="login-form" class="login-form">
-                <div class="form-group">
-                    <label class="form-label">Clinic ID</label>
-                    <input type="text" class="form-control" id="clinic-id" value="DEMO_CLINIC_001" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" value="dr.smith" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" value="demo123" required>
-                </div>
-                <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
-            </form>
-            <div class="login-footer">
-                <p>Demo Credentials: dr.smith / demo123</p>
-                <div class="compliance-badges">
-                    <span class="status status--success">HIPAA Compliant</span>
-                    <span class="status status--info">SOC 2 Certified</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Main Application -->
     <div id="main-app" class="main-app hidden">
         <!-- Header -->
         <header class="app-header">
             <div class="header-left">
-                <h2 class="app-logo">MedAI</h2>
+                <h2 class="app-logo">ClinIQ</h2>
                 <nav class="main-nav">
                     <button class="nav-btn active" data-view="dashboard">Dashboard</button>
                     <button class="nav-btn" data-view="patients">Patients</button>
@@ -60,7 +29,7 @@
                 </div>
                 <div class="user-menu">
                     <span>Dr. Smith</span>
-                    <button class="btn btn--outline btn--sm" id="logout-btn">Logout</button>
+                    <a class="btn btn--outline btn--sm" id="logout-btn" href="/login.page/login.html">Logout</a>
                 </div>
             </div>
         </header>
@@ -95,7 +64,7 @@
                         <div class="metric-icon">🎯</div>
                         <div class="metric-content">
                             <div class="metric-value">94.2%</div>
-                            <div class="metric-label">AI Accuracy</div>
+                            <div class="metric-label">Accuracy</div>
                             <div class="metric-change">+0.5% this week</div>
                         </div>
                     </div>
@@ -130,7 +99,7 @@
                             <div class="case-item">
                                 <div class="case-info">
                                     <h4>Michael Chen (P002)</h4>
-                                    <p>MRI Brain Scan • AI Analysis Complete</p>
+                                    <p>MRI Brain Scan • Analysis Complete</p>
                                     <span class="status status--success">Ready for Review</span>
                                 </div>
                                 <div class="case-actions">
@@ -399,16 +368,16 @@
                         </div>
                     </div>
 
-                    <!-- Step 4: AI Analysis Results -->
+                    <!-- Step 4: Analysis Results -->
                     <div class="workflow-step hidden" id="analysis-results">
                         <div class="step-header">
-                            <h2>Step 4: AI Analysis Results</h2>
+                            <h2>Step 4: Analysis Results</h2>
                             <div class="step-progress">4 of 4</div>
                         </div>
                         <div class="analysis-content">
                             <div class="analysis-loading hidden" id="analysis-loading">
                                 <div class="loading-spinner"></div>
-                                <h3>AI Analysis in Progress...</h3>
+                                <h3>Analysis in Progress...</h3>
                                 <p>Processing symptoms, vital signs, and medical images</p>
                                 <div class="progress-bar">
                                     <div class="progress-fill"></div>
@@ -417,7 +386,7 @@
 
                             <div class="analysis-complete hidden" id="analysis-complete">
                                 <div class="ai-confidence">
-                                    <h3>AI Analysis Complete</h3>
+                                    <h3>Analysis Complete</h3>
                                     <div class="confidence-score">
                                         <span class="confidence-value">92%</span>
                                         <span class="confidence-label">Confidence Score</span>
@@ -524,7 +493,7 @@
                 <div class="analytics-dashboard">
                     <div class="analytics-metrics">
                         <div class="metric-card">
-                            <h4>AI Model Performance</h4>
+                            <h4>Model Performance</h4>
                             <div class="metric-value">94.2%</div>
                             <div class="metric-label">Overall Accuracy</div>
                         </div>
@@ -579,7 +548,7 @@
 
                 <div class="settings-sections">
                     <div class="settings-section">
-                        <h3>AI Model Configuration</h3>
+                        <h3>Model Configuration</h3>
                         <div class="form-group">
                             <label class="form-label">Confidence Threshold</label>
                             <input type="range" class="form-control" value="85" min="50" max="100">

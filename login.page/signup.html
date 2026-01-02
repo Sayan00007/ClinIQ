@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinIQ - Sign Up | Diagnostics</title>
+    <link rel="stylesheet" href="auth-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Background Pattern -->
+        <div class="auth-bg">
+            <div class="bg-pattern"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="auth-content">
+            <!-- Left Side - Branding -->
+            <div class="auth-brand">
+                <div class="brand-content">
+                    <div class="brand-logo">
+                        <div class="logo-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4Z" fill="#2563EB"/>
+                                <path d="M16 24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24C32 28.4183 28.4183 32 24 32C19.5817 32 16 28.4183 16 24Z" fill="white"/>
+                                <path d="M20 24C20 21.7909 21.7909 20 24 20C26.2091 20 28 21.7909 28 24C28 26.2091 26.2091 28 24 28C21.7909 28 20 26.2091 20 24Z" fill="#2563EB"/>
+                            </svg>
+                        </div>
+                        <h1>ClinIQ</h1>
+                    </div>
+                    <h2>Join the Future of Healthcare Diagnostics</h2>
+                    <p>Get started with ClinIQ and transform your practice with diagnostic tools trusted by healthcare professionals worldwide.</p>
+
+                    <div class="signup-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">95%+</div>
+                            <div class="stat-label">Diagnostic Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Healthcare Providers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1.3s</div>
+                            <div class="stat-label">Avg Processing Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Signup Form -->
+            <div class="auth-form-container">
+                <div class="auth-form-wrapper">
+                    <div class="form-header">
+                        <h3>Create Your Account</h3>
+                        <p>Start your free trial today - no credit card required</p>
+                    </div>
+
+                    <form id="signup-form" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name" class="form-label">First Name</label>
+                                <input 
+                                    type="text" 
+                                    id="first-name" 
+                                    name="firstName" 
+                                    class="form-control" 
+                                    placeholder="John"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name" class="form-label">Last Name</label>
+                                <input 
+                                    type="text" 
+                                    id="last-name" 
+                                    name="lastName" 
+                                    class="form-control" 
+                                    placeholder="Smith"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-control" 
+                                placeholder="john.smith@clinic.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clinic-name" class="form-label">Clinic/Practice Name</label>
+                            <input 
+                                type="text" 
+                                id="clinic-name" 
+                                name="clinicName" 
+                                class="form-control" 
+                                placeholder="Smith Medical Center"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="specialty" class="form-label">Medical Specialty</label>
+                                <select id="specialty" name="specialty" class="form-control" required>
+                                    <option value="">Select specialty</option>
+                                    <option value="general">General Practice</option>
+                                    <option value="internal">Internal Medicine</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="dermatology">Dermatology</option>
+                                    <option value="radiology">Radiology</option>
+                                    <option value="emergency">Emergency Medicine</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="clinic-size" class="form-label">Clinic Size</label>
+                                <select id="clinic-size" name="clinicSize" class="form-control" required>
+                                    <option value="">Select size</option>
+                                    <option value="1-5">1-5 providers</option>
+                                    <option value="6-20">6-20 providers</option>
+                                    <option value="21-50">21-50 providers</option>
+                                    <option value="50+">50+ providers</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password" class="form-label">Password</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="signup-password" 
+                                    name="password" 
+                                    class="form-control" 
+                                    placeholder="Create a strong password"
+                                    required
+                                >
+                                <button type="button" class="password-toggle" onclick="togglePassword('signup-password')">
+                                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="confirm-password" 
+                                    name="confirmPassword" 
+                                    class="form-control" 
+                                    placeholder="Confirm your password"
+                                    required
+                                >
+                                <button type="button" class="password-toggle" onclick="togglePassword('confirm-password')">
+                                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-agreements">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" id="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="marketing" id="marketing">
+                                <span class="checkmark"></span>
+                                I'd like to receive product updates and healthcare insights
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Create Account</span>
+                            <div class="btn-loader hidden">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+
+                        <div class="form-divider">
+                            <span>or</span>
+                        </div>
+
+                        <button type="button" class="btn btn-secondary btn-full" onclick="demoSignup()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                            Start Free Trial
+                        </button>
+                    </form>
+
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="login.html" class="auth-link">Sign in here</a></p>
+                    </div>
+
+                    <div class="compliance-badges">
+                        <div class="badge">
+                            <span class="badge-icon">🛡️</span>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">✅</span>
+                            <span>SOC 2 Certified</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">🔐</span>
+                            <span>256-bit Encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth-script.js"></script>
+</body>
+</html>
