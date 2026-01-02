@@ -69,8 +69,29 @@
         initDiagnostics();
         initReports();
         initSettings();
+        displayDate();
         
         console.log('ClinIQ Platform Loaded Successfully');
+
+        // === Get Current Date ===
+        function getCurrentDate() {
+            const date = new Date();
+
+            const options = {
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long',  
+                day: 'numeric',
+            };
+
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function displayDate() {
+            let date = getCurrentDate();
+            let clock = document.querySelector('#date');
+            clock.innerHTML = `Today's Overview - ${date}`;
+        }
 
         // === NAVIGATION ===
         function initNavigation() {

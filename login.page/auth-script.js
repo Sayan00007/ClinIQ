@@ -573,3 +573,7 @@ function showWarningMessage(message) {
 window.togglePassword = togglePassword;
 window.demoLogin = demoLogin;
 window.demoSignup = demoSignup;
+
+function timeDate() {
+    let 
+}
