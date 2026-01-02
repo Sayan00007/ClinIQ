@@ -62,7 +62,7 @@ function handleLogin(form) {
 
             // Redirect to main platform
             setTimeout(() => {
-                window.location.href = '/main.app/main.html';
+                window.location.href = 'ClinIQ/main.app/main.html';
             }, 1500);
         } else {
             showErrorMessage('Invalid credentials. Please check your clinic ID, username, and password.');
